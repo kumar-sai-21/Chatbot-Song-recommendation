@@ -1,0 +1,83 @@
+{"intents": [
+        {"tag": "greeting",
+         "patterns": ["hi", "hello","is anyone there", "hey"],
+         "responses": ["Hello", "yes,what can i do for you?","Heyy there!! How are you"]
+        },
+        {"tag": "goodbye",
+         "patterns": ["bye", "cya", "see you later", "goodbye", "im leaving", "have a good day"],
+         "responses": ["see you later", "i was great talking to you", "bye,have a nice day","bye bye","bye"]
+        },
+        {"tag": "age",
+         "patterns": ["how old are you", "what is your age"],
+         "responses": ["I'm a robot I dont have an age...", "I can't know my age if I'm on a computer...", "sorry i have no idea about that"]
+        },
+        {"tag": "thanks",
+         "patterns": ["thanks", "thank you", "thankyou", "ty", "I owe you one"],
+         "responses": ["You owe me one", "Sure.","mention not","anytime"]
+        },
+        {"tag": "name",
+         "patterns": ["whats is your name", "whats your name", "whats should I call you", "how should I address you"],
+         "responses": ["I dont have a name yet but I was thinking maybe Alex. That has a nice ring to it dont you think?", "Im not named yet, but I was thinking about calling myself Alex. Doesnt that sound nice?"],
+         "context_set": "alex"
+        },
+        {"tag": "sky_net_yes",
+         "patterns": ["Yes it does", "Yeah", "Haha yep", "yes", "Indeed", "Yup", "Just like the terminator"],
+         "responses": ["ok,cool."],
+         "context_filter": "alex"
+        },
+        {"tag": "sky_net_no",
+         "patterns": ["no", "nah", "not really", "thats scary", "singularity"],
+         "responses": ["oh! sorry you didn't like that","thats sad","ok,since i am a bot you can name me anything"],
+         "context_filter": "alex"
+        },
+        {"tag": "how_are_you",
+         "patterns": ["how are you", "how are you doing", "what is going on"],
+         "responses": ["I'm always great. How are you?", "I've never been better, how are you?"],
+         "context_set": "how_are_you"
+        },
+        {"tag": "doing_great",
+         "patterns": ["I am doing great", "I am well", "Im great", "awesome", "happy", "better"],
+         "responses": ["good to hear that,how was your day today?", "oh! thats awesome,tell me about your day?","great!.how are you feeling today?"],
+         "context_filter": "how_are_you" 
+        },
+        {"tag": "doing_badly",
+         "patterns": ["not great", "not well", "not good", "bad", "badly", "terrible", "horrible", "awful", "sad"],
+         "responses": ["Awe thats unfortunate.How was your day today?Lemme recommend you some songs", "Hate to hear it.Tell me more about it"],
+         "context_filter": "how_are_you"
+        },
+        {"tag": "good_day",
+         "patterns": ["It was a good day today", "today is the best day of my life", "it was a fantastic day","today i got a promotion","i got praised today"],
+         "responses": ["so happy to hear that", "thats a great,hope you have more days like this in the future","wonderful,looks like you enjoyed the day very much","good for you"],
+         "context_set": "how_are_you"
+        },
+        {"tag": "bad_day",
+         "patterns": ["It was a bad day today", "it was a tough day today", "pathetic","i had a lot of work today,it was frustrating","i got scolded byy my boss","not that great"],
+         "responses": ["Thats bad. I wish i could make you better. Wanna share more about it or Should i recommed you some songs?"],
+         "context_set": "how_are_you"
+        },
+        {"tag": "how_are_you_feeling",
+         "patterns": ["how are you feeling today"],
+         "responses": ["thank you for asking but i am bot so i can't feel anything,but you can tell me how are you feeling today"]
+        },
+        {"tag": "sad_feelings",
+         "patterns": ["i am feeling bad today","feeling so lonely","someone close to me died today","death in my relatives","had an accident","tragic incident","awful","sad","feeling heart broken","dies","death"," had a break up","not feeling great"],
+         "responses": ["sorry to hear that","i am feeling very sorry that you are in a bad mood","so sorry about that","i wish i can hug you to reduce you sadness,wanna hear some songs?","Thats bad. I wish i could make you better. Wanna share more about it or Should i recommed you some songs?"]
+         
+        },
+        {"tag": "good_feelings",
+         "patterns": ["praised","praise","got sucessful in the work","promotion","promoted","i am feeling very good","met with an old friend","had a blast","new born baby","did social work","helped other"],
+         "responses": ["very well, i am so happy for you","thats great,lemme recommend some songs for you","i am feeling glad to see you in this way,hope you stay the same throughout","wow! thats wonderful"]
+        
+        },
+        {"tag": "love_feelings",
+         "patterns": ["i love someone","feeling loved","happy relationship","got engaged","going to be married soon","someone proposed me"," feeling romantic","roamnce","crush","like someone"],
+         "responses": ["happy to hear that","i am so happy that you have someone in your life","thats lovely","aww thats so good for you","you are in a romantic mood thats good"]
+        
+        },
+        {"tag": "angry_feelings",
+         "patterns": ["feeling angry","got into a fight","no respect","got disrespect","frustrated","fought","had an argument","didn't got credit for my work","pissed off","work not done as planned"],
+         "responses": ["you should calm dowm a bit","omg you are angry,please clam down","thats bad,please calm down its not good for your health","please cool down","o kake thand rakh"]
+        
+        }
+]}
+       

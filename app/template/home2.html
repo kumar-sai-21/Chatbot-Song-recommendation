@@ -1,0 +1,125 @@
+{%load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'style2.css' %}">
+    <script src="{% static 'jquery-3.4.1.min.js' %}"></script> 
+    <!-- <script src="{% static 'script.js' %}"></script>  -->
+
+  </head>
+<body>
+   
+    <form method="post" id=""frm action="{% url 'home' %}" style="visibility: hidden;" >
+        {% csrf_token %}
+        <input class="input" id="inp" name="submit">
+        <button type="submit" id= "btn" class="btn btn-outline-warning" style="color: yellow;"></button>
+    </form>
+<div class="page">
+   <div class="container">
+    
+    <div class="chat-box" id = "chat-box">
+        <!-- client -->
+        <div class="client">
+          <button class="send-btn recommend" onclick="recommend()">
+            <img src="../static/robotics.png" alt="logo" />
+          </button>
+            
+            <div class="client-info">
+                <h2>Chatify</h2>
+                <p>Online</p>
+               
+            </div>
+        </div>
+
+        <!-- main chat section -->
+        <div class="chats" id ="chats">
+                <div class="my-chat">
+                    Hello,Great to see you!
+                </div>
+                <div class="client-chat">
+                    Hi
+                </div>
+                <div class="my-chat">
+                    How are you?
+                </div>
+                <div class="client-chat">
+                    I am good.
+                </div>
+                <div class="my-chat">
+                    Nice . How was your day today ?
+                </div>
+                <div class="client-chat">
+                    It was a good day. I had to work more but i recieved many praises and appreciation by my seniors.
+                </div>
+                <div class="my-chat">
+                    That sounds so great.
+                </div>
+
+        </div>
+
+        <!-- input field section -->
+        <div class="chat-input">
+            <input id ="sendInput" type="text" placeholder="Enter Message" />
+            <button id="sendBtn" class="send-btn" onclick="sendBtn()">
+                <img src="../static/send.png" alt="send-btn">
+            </button>
+        </div>
+    </div>
+    <div class="chat-btn">
+        <img src="../static/chat.png"  alt="chat box icon btn">
+    </div>
+</div>
+
+
+
+
+</div>
+
+<script>
+     $(".chat-box").slideToggle("fast")
+    $(document).ready(() => {
+    $(".chat-btn").click(() => {
+        $(".chat-box").slideToggle("slow")
+    })
+})
+    function sendBtn(){
+        chat = document.getElementById("sendInput").value
+        document.getElementById("sendInput").value = ""
+        elem = document.createElement("div")
+        elem.innerHTML = chat
+        elem.setAttribute("class","client-chat")
+        
+        document.getElementById("chats").appendChild(elem)
+        document.getElementById("chat-box").scrollTop =  document.getElementById("chat-box").scrollHeight
+
+    }
+    function recommend(){
+      chats= document.getElementsByClassName("client-chat")
+      var s =""
+      for (var i=0;i<chats.length;i++)
+      {
+        
+        s+=chats[i].innerHTML+" "
+      }
+      console.log(s)
+      document.getElementById("inp").value=s
+      f = document.getElementById("btn").click()
+
+    //   var form = document.getElementById("frm");
+    //   function handleForm(event) { event.preventDefault(); } 
+    //   form.addEventListener('submit', handleForm);
+     
+  
+    }
+</script>
+</body>
+</html>
+
+<!-- hi I am good  I had a very bad day today I am feeling very low  I am also feeling tired It was a tough day  -->
+<!-- hi I am good . I am feeling very nice . Today i was praised by my seniors for my work -->
+<!-- hi I am good but am frustrated. I worked so much but my mindless boss ignored it. i wish i could smack him and hit him hard. i feel irritated and rejected  -->
+<!-- i was ready to meet mom in the airport and feel her ever supportive arms around me -->

@@ -1,0 +1,115 @@
+{%load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'songs.css' %}">
+    <style>
+      
+
+
+    /* SAD :  */
+    /* background: rgb(124,150,190);
+background: linear-gradient(270deg, rgba(124,150,190,1) 0%, rgba(109,126,152,1) 50%, rgba(84,84,84,1) 100%); */
+.background-song{
+    top: 0;
+    left: 0;
+    height: max-content;
+  
+    position: absolute;
+    position: 0;
+    width: 100%;
+}
+.sad{
+    background: rgb(124,150,190);
+    background: linear-gradient(270deg, rgba(124,150,190,1) 0%, rgba(109,126,152,1) 50%, rgba(84,84,84,1) 100%);
+
+}
+.joy{
+  background: rgb(68,175,219);
+background: linear-gradient(90deg, rgba(68,175,219,1) 0%, rgba(80,153,172,1) 41%, rgba(0,250,129,1) 100%);
+}
+.love{
+  background: rgb(255,52,88);
+background: linear-gradient(90deg, rgba(255,52,88,1) 0%, rgba(228,33,70,1) 55%, rgba(238,80,255,1) 100%);
+
+}
+.angry{
+  background: rgb(252,7,51);
+background: linear-gradient(124deg, rgba(252,7,51,1) 0%, rgba(231,116,14,1) 64%, rgba(87,87,82,1) 100%);
+}
+.cardangry{
+  background: cadetblue;
+}
+.cardjoy{
+  background: lightpink
+}
+.cardsad{
+  background: darkgray;
+  
+}
+.cardlove{
+  background: aquamarine
+}
+
+
+        .songs{
+        display: grid;
+        grid-template-columns: auto auto auto auto;
+       
+
+        }
+        .card {
+          box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+          transition: 0.3s;
+          width: 200px;
+          height: 270px;
+          margin: 2vh;
+          /* sad */
+          /* background: darkgray; */
+          /* happy
+          background: aquamarine;/lightpink; */
+          /* love
+          background: fuchsia/aquamarine; */
+          /* angry
+          background: cadetblue; */
+        }
+        
+        .card:hover {
+          box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+        }
+        
+        .container {
+          padding: 2px 16px;
+        }
+        </style>
+</head>
+<body>
+  
+    {% if content != ""  %}
+    <div class="background-song {{content.1}}">
+      <h1> Recommend Songs :</h1>
+    <div class="songs">
+        {%for i in content.0 %}
+        {%for key,value in i.items %}
+        <div class="card card{{content.1}}">
+            <img src="{{value.2}}" alt="Avatar" style="width: 195px;height: 150px;padding: 2px;">
+            <div class="container" id="{{key}}" >
+              <h4><b>{{value.0}}</b></h4> 
+              <a href="{{value.1}}" target="_blank">Link</a> 
+            </div>
+          </div>
+         {%endfor%}
+  
+      {% endfor %}
+    </div>
+  </div>
+    {% endif %}
+  
+    
+    
+</body>
+</html>

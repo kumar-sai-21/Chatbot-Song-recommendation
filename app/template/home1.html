@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        body{
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         min-height: 100%;
+         background: #252839;  
+        }
+        h2{
+            position: relative;
+            font-size: 3vw;
+            color: #252839;
+            -webkit-text-stroke:  0.3vw #383d52;
+            text-transform: uppercase;
+        }
+        h2::before{
+                content: attr(data-text);
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 0%;
+                height: 100%;
+                color: #01fe87;
+                -webkit-text-stroke: 0vw #383d52;
+                border-right: 2px solid #01fe87;
+                overflow: hidden;
+               
+        }
+        #namaskaram::before{
+            animation: ani 2s linear;
+        }
+        #welcome::before{
+            animation: ani 2s linear;
+            animation-delay: 2s;
+        }
+        #song::before{
+            animation: ani 2s linear;
+            animation-delay: 4s;
+        }
+        #chatbot::before{
+            animation: ani 2s linear;
+            animation-delay: 6s;
+        }
+        
+        @keyframes ani{
+            0%,10%{
+                width: 0;
+            }
+            60%,100%{
+                width: 60vw;
+                border-right: 8px solid #01fe87;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="welcome">
+    <h2 data-text="Namaskaram" id="namaskaram">Namaskaram</h2>
+    <h2 data-text="Welcome to," id="welcome">Welcome To</h2>
+    <h2 data-text="Song_Recommendation" id="song">Song_Recommendation</h2>
+    <h2 data-text="Using_Chatbot" id="chatbot">Using_Chatbot</h2>
+</div>
+</body>
+</html>
